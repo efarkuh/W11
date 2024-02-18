@@ -29,16 +29,7 @@ export async function Vote({ postId, votes }) {
     revalidatePath(`/post/${postId}`);
     }}   }
    
-    if (session?.user?.id != null) {
-      return (
-        <div className="max-w-screen-lg mx-auto p-4 mt-10">
-          You need to login to vote <LoginButton />
-        </div>
-      );
-    }
-
-  
-
+   
   async function downvote() {
     "use server";
     const session = await auth();
@@ -53,17 +44,7 @@ export async function Vote({ postId, votes }) {
     revalidatePath(`/post/${postId}`);
   }};
 
-  if (session?.user?.id != null) {
-    return (
-      <div className="max-w-screen-lg mx-auto p-4 mt-10">
-        You need to login to vote <LoginButton />
-      </div>
-    );
-  }
-
-
-
-
+  
   return (
     <>
       {votes} votes
