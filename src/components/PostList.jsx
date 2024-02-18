@@ -22,7 +22,7 @@ export async function PostList({ currentPage = 1 }) {
         {posts.map((post) => (
           <li key={post.id} className=" py-4 border-b border-zinc-800">
             <Link
-              href={`/post/${post.id}`}
+              href={`/post/${post.id}?title=${encodeURIComponent(post.title)}`}
               className="text-3xl underline hover:text-pink-500"
             >
               {post.title}
