@@ -27,7 +27,7 @@ export async function Vote({ postId, votes }) {
 
     revalidatePath("/");
     revalidatePath(`/post/${postId}`);
-    }}   
+    }}   }
    
     if (session?.user?.id != null) {
       return (
@@ -37,7 +37,7 @@ export async function Vote({ postId, votes }) {
       );
     }
 
-  }
+  
 
   async function downvote() {
     "use server";
@@ -51,7 +51,7 @@ export async function Vote({ postId, votes }) {
 
     revalidatePath("/");
     revalidatePath(`/post/${postId}`);
-  }
+  }};
 
   if (session?.user?.id != null) {
     return (
@@ -62,11 +62,10 @@ export async function Vote({ postId, votes }) {
   }
 
 
-}
+
 
   return (
     <>
-    
       {votes} votes
       <div className="flex space-x-3">
         <form action={upvote}>
